@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoShop</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+    <script src="ordenador.js" defer></script>
+    <script src="portatil.js" defer></script>
+    <script src="carrito.js" defer></script>
+    <script src="catalogo.js" defer></script>
+</head>
+
+<body>
+    <h1>TecnoShop</h1>
+    <p>Carrito (<span id="cantidad-carrito">0</span>)</p>
+
+    <h2>Catálogo</h2>
+
+    <label for="filtro-tipo">Tipo de ordenador:</label>
+    <select id="filtro-tipo">
+        <option value="todos">Todos</option>
+        <option value="sobremesa">Sobremesa</option>
+        <option value="portatil">Portátiles</option>
+    </select>
+
+    <button id="ordenar-precio" type="button">
+        Ordenar por precio
+    </button>
+
+    <div id="catalogo"></div>
+
+    <h2>Tu carrito</h2>
+
+    <div id="carrito"></div>
+
+    <p>Total: <span id="total-carrito">0</span> €</p>
+    <button id="vaciar-carrito" type="button">Vaciar carrito</button>
+
+    <h2>Añadir un producto</h2>
+
+    <form id="formulario-producto">
+        <p>
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo">
+                <option value="sobremesa">Sobremesa</option>
+                <option value="portatil">Portátil</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
+        </p>
+
+        <p>
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" required>
+        </p>
+
+        <p>
+            <label for="precio">Precio (€):</label>
+            <input type="number" id="precio" name="precio"
+                   min="0.01" step="0.01" required>
+        </p>
+
+        <p>Los siguientes campos son opcionales:</p>
+
+        <p>
+            <label for="ram">RAM (GB):</label>
+            <input type="number" id="ram" name="ram" min="1">
+        </p>
+
+        <p>
+            <label for="disco">Disco (GB):</label>
+            <input type="number" id="disco" name="disco" min="1">
+        </p>
+
+        <p>
+            <label for="pulgadas">Pulgadas:</label>
+            <input type="number" id="pulgadas" name="pulgadas"
+                   min="0.1" step="0.1">
+        </p>
+
+        <p>
+            <label for="autonomia">Autonomía (horas, solo portátiles):</label>
+            <input type="number" id="autonomia" name="autonomia"
+                   min="0.1" step="0.1">
+        </p>
+
+        <p id="mensaje-formulario"></p>
+
+        <button type="submit">Añadir al catálogo</button>
+    </form>
+</body>
+</html>
